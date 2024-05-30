@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %} 
+{% load static %}       
+<!-- Page Header-->
+<header class="masthead" style="background-image: url({% static 'assets/img/about-bg.jpg' %})">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="page-heading">
+                    <h1>About Me</h1>
+                    <span class="subheading">This is what I do.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <p>It's no secret that working mothers still face discrimination in the workplace. With few legal protections in place, many moms are pushed out of workplaces (laid off or fired) and subjected to stereotypes about their competency. I've faced discrimination as a working mother several times since 1997. I've been passed over for a promotion and stepped down from a leadership role because of the discrimination I faced.</p>
+                <p>From the moment I saw that little blue plus sign, I've been fighting for equality at work and home. A lack of paid leave, exorbitant childcare costs and discrimination made my early career difficult at best, and for the majority of Americans, makes it nearly impossible to have a family.</p>
+                <p>I was just 24 years old when I became a mom for the first time. I was new at many things then: adulthood, marriage, and home ownership. I had no idea that the statistics were so stacked against me. Gender disparity didn't cross my mind—that's just the way it was. Little did I know that I was stepping into an entirely new world—one that would continually discount me.</p>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Footer-->
+{% endblock content %}

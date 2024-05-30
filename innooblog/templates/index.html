@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %} 
+{% load static %}       
+<!-- Page Header-->
+        <header class="masthead" style="background-image: url({% static 'assets/img/gif.webp' %})">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Innoovatum Blog</h1>
+                            <span class="subheading">Write your Personalized blogs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!-- Post preview-->
+                    {% for post in post_list %}
+                    <div class="post-preview">
+                        <a href="{% url 'post_detail' post.slug %}">
+                            <h4 class="">{{post.title}}</h4></a>
+                            <p class="post-muted">{{post.content | slice:200 | safe}}</p>
+                        
+                        <p class="post-meta">
+                          {{post.author}} |  
+                            {{post.created_on}}
+                        </p>
+                    </div>
+                    {% endfor %}
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Post preview-->
+                    <!-- Pager-->
+
+                    {% if is_paginated %}
+                       {% if page_obj.has_previous %}
+                       <div class="d-flex justify-content-end mb-4">
+                        <a href="?page={{page_obj.previous_page_number}}" class="btn btn-primary text-uppercase">Older posts</a>
+                        </div>
+                       {% endif %}
+
+                       {% if page_obj.has_next %}
+                       <div class="d-flex justify-content-end mb-4">
+                        <a href="?page={{page_obj.next_page_number}}" class="btn btn-primary text-uppercase">Next posts</a>
+                        </div>
+                       {% endif %}
+
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+{% endblock content %}
